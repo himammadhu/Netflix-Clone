@@ -1,22 +1,61 @@
-.row{
+.row {
     margin-left: 20px;
     color: white;
-
-}
-.posters{
-    display: flex;
-    padding: 20px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-
-
-}
-.posters::-webkit-scrollbar {
-    display: none;
-}
-.poster{
-    height: 250px;
-    margin-right: 10px;
-    scrollbar-width: none;
-    
-}
+  
+    .posters {
+      display: flex;
+      padding: 20px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      scrollbar-width: none;
+  
+      &::-webkit-scrollbar {
+        display: none;
+      }
+  
+      .poster-container {
+        position: relative;
+        margin-right: 10px;
+        cursor: pointer;
+  
+        &:hover {
+          .title {
+            opacity: 1;
+            bottom: 0;
+          }
+        }
+  
+        .poster {
+          max-height: 250px;
+          margin-right: 10px;
+          cursor: pointer;
+  
+          &:hover {
+            transform: scale(1.09);
+          }
+        }
+        
+  
+        .smallPoster {
+          max-height: 150px;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+  
+        .title {
+          position: absolute;
+          bottom: -30px; 
+          left: 0;
+          right: 0;
+          padding: 5px;
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.7);
+          color: white;
+          font-size: 14px;
+          opacity: 0;
+          transition: opacity 0.3s, bottom 0.3s;
+        }
+      }
+    }
+  }
+  
